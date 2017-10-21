@@ -5,6 +5,7 @@ import json
 infile = 'Paper Mario (USA).z64'
 outfile = 'Paper Mario (USA) - Randomized.z64'
 
+assert(os.path.isfile(infile))
 os.system('copy "%s" "%s"' % (infile, outfile))
 f=open(outfile,'rb+')
 
@@ -78,4 +79,5 @@ for i in range(421):
     
 
 f.close()
+assert(os.path.isfile('rn64crc\\rn64crc.exe'))
 os.system('rn64crc\\rn64crc.exe "%s" -u' % outfile)
